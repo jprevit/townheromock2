@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grimtol JS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Jacquard+12&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <main>
+        <section class="town">
+            <div class="card">
+                <h4>Tavern🛖</h4>
+                <p>Rest to heal.</p>
+                <button onclick="healHero()">10🪙</button>
+            </div>
+
+            <div class="card">
+                <h4>Cobbler 🧑‍⚖️</h4>
+                <p>Get bigger boots to squish better.</p>
+                <button>25🪙</button>
+            </div>
+            <!-- <div class="card">
+                <h4>Gym 🏋️‍♀️</h4>
+                <p>Get tougher</p>
+                <button>18🪙</button>
+            </div> -->
+
+
+        </section>
+
+
+        <section class="dungeon">
+            <div class="monster-card">
+                <img src="assets/Monsters/Goblin.png" alt="" id="monster-picture">
+                <p id="monster-stats">Squelch</p>
+                <div>
+                    <button onclick="betterAttackMonster('sword')">🗡️</button>
+                    <button onclick="betterAttackMonster('bow')">🏹</button>
+                    <button onclick="betterAttackMonster('magic')">☄️</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="hero-section">
+            <img src="assets/Players/HeroPortrait2.png" alt="">
+            <div>
+                <p id="hero-name">Bill</p>
+                <div id="hero-stats">10💗 | 2🗡️ </div>
+            </div>
+
+        </section>
+    </main>
+</body>
+
+<script src="app.js"></script>
+
+</html>
