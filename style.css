@@ -53,6 +53,8 @@ button {
 
 .town {
     background-image: url(assets/Backgrounds/townbg.png);
+    padding: 2em;
+    border-bottom: double gold 5px;
 }
 
 .monster-card {
