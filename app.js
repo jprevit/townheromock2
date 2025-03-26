@@ -3,6 +3,11 @@
 // let squelchHealth = 7
 // let squelchName = 'Squelch'
 // let kruskHealth = 10
+let monsterStatsElm = document.getElementById('monster-stats')
+let monsterPictureElm = document.getElementById('monster-picture')
+let heroStatsElm = document.getElementById('hero-stats')
+let heroNameElm = document.getElementById('hero-name')
+let heroPictureElm = document.getElementById('hero-picture')
 
 let hero = {
     name: 'Hiro',
@@ -89,16 +94,13 @@ function betterAttackMonster(attackType) {
 function attackHero() {
     hero.health -= monster.attackPower
     if (hero.health <= 0) {
-        window.alert('Your journey has ended...')
         document.body.innerHTML = `<h1 class='game-over'>GAME OVER</h1>`
+    } else if (hero.health < 5) {
+        heroPictureElm.classList.add('dying')
     }
-
 }
 
 function drawMonster() {
-    let monsterStatsElm = document.getElementById('monster-stats')
-    let monsterPictureElm = document.getElementById('monster-picture')
-
     monsterStatsElm.innerText = `${monster.name} | ${monster.health}❤️‍🩹`
     monsterPictureElm.setAttribute('src', `assets/Monsters/${monster.picture}`)
 }
@@ -112,9 +114,6 @@ function switchMonster() {
 }
 
 function drawHero() {
-    let heroStatsElm = document.getElementById('hero-stats')
-    let heroNameElm = document.getElementById('hero-name')
-
     heroStatsElm.innerHTML = `<span>${hero.health} 💖</span> <span>${hero.attackPower}🥾</span><span>${hero.gold}🪙</span>`
     heroNameElm.innerText = `${hero.name}`
 }
@@ -123,6 +122,7 @@ function healHero() {
     if (hero.gold >= 10) {
         hero.health += 5
         hero.gold -= 10
+        heroPictureElm.classList.remove('dying')
     } else { window.alert('You are broke') }
     drawHero()
 }
